@@ -88,5 +88,28 @@ public class PrimitiveTypes {
         System.out.println("\n### Переполнение при вычислениях ###");
         System.out.println(String.format("byte: 127 + 1 = %s", (byte) (Byte.MAX_VALUE + 1)));
         System.out.println(String.format("int: 2147483647 + 1 = %s", (int) (Integer.MAX_VALUE + 1)));
+
+        //Exceptions
+        System.out.println("\n### Exceptions ###");
+        try {
+            int data= varInt / 0;
+        } catch(ArithmeticException e) {
+            System.out.println(e);
+        }
+
+
+        try {
+            int data = Integer.parseInt(null) ;
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+
+        try {
+            String data = null ;
+            data.length();
+        } catch (NullPointerException e) {
+            System.out.println(e);
+        }
+
     }
 }
